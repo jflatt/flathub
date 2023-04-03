@@ -1,27 +1,17 @@
-# Flathub
-
-Flathub is the central place for building and hosting Flatpak builds.
-
-Using the Flathub repository
-----------------------------
-
-To install applications that are hosted on Flathub, use the following:
+To copy configuration:
 ```
-flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub org.gnome.Recipes
+mkdir -p ~/.supermodel/Analysis/
+mkdir -p ~/.supermodel/Assets/
+mkdir -p ~/.supermodel/Config/
+mkdir -p ~/.supermodel/Log/
+mkdir -p ~/.supermodel/NVRAM/
+mkdir -p ~/.supermodel/Saves/
+mkdir -p ~/.supermodel/Screenshots/
+cp -r ~/.local/share/flatpak/app/com.supermodel3.Supermodel/current/active/files/Assets ~/.supermodel/
+cp ~/.local/share/flatpak/app/com.supermodel3.Supermodel/current/active/files/Config/Games.xml ~/.supermodel/Config/
+cp -n ~/.local/share/flatpak/app/com.supermodel3.Supermodel/current/active/files/Config/Supermodel.ini ~/.supermodel/Config/
 ```
-
-To install applications from the beta branch, use the following:
+To run from a terminal:
 ```
-flatpak remote-add flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-flatpak install flathub-beta org.godotengine.Godot
+flatpak run com.supermodel3.Supermodel <romset>
 ```
-
-For more information and more applications see https://flathub.org
-
-Contributing to Flathub
------------------------
-
-For information on creating packages or reporting issues please see the [contributing page](/CONTRIBUTING.md).
-
-***Note:*** *this repository is not for reporting issues related to the flathub.org website itself or contributing to its development. For that, go to https://github.com/flathub/website*
